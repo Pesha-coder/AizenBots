@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aizen.Bots</title>
+    <title>Aizen.Botss</title>
     <style>
         /* Aizen Purple Animations */
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(40px, -60px); }
             100% { transform: translate(0, 0); }
+        }
+
+        /* Title floating animation */
+        @keyframes floatTitle {
+            0% { transform: translate(0px, 0px) rotate(0deg); }
+            33% { transform: translate(10px, -10px) rotate(1deg); }
+            66% { transform: translate(-10px, 5px) rotate(-1deg); }
+            100% { transform: translate(0px, 0px) rotate(0deg); }
         }
 
         @keyframes popUp {
@@ -59,7 +67,13 @@
         }
 
         header { margin: 60px 0; }
-        h1 { font-size: 3.2rem; color: #d8b4fe; text-shadow: 0 0 20px #8a2be2; margin: 0; }
+        
+        /* Floating Title */
+        h1 { 
+            font-size: 3.2rem; color: #d8b4fe; text-shadow: 0 0 20px #8a2be2; margin: 0; 
+            display: inline-block; animation: floatTitle 7s infinite ease-in-out;
+        }
+        
         .sub { color: #aaa; font-style: italic; margin-top: 10px; display: block; }
 
         .title-line { 
@@ -74,8 +88,8 @@
 
         /* Glassmorphism Boxes (Transparent) */
         .item-box {
-            background: rgba(20, 20, 20, 0.6); /* See-through */
-            backdrop-filter: blur(10px); /* Blur effect */
+            background: rgba(20, 20, 20, 0.6); 
+            backdrop-filter: blur(10px); 
             border: 1px solid rgba(138, 43, 226, 0.2); 
             padding: 25px; border-radius: 12px; width: 100%; max-width: 400px;
             opacity: 0; animation: popUp 0.8s ease-out forwards; animation-delay: 0.4s;
@@ -100,9 +114,9 @@
         
         /* THE CLICK ANIMATION */
         .btn:active {
-            transform: scale(1.1); /* Gets bigger */
-            box-shadow: 0 0 30px #d8b4fe, 0 0 10px #8a2be2 inset; /* Purple Glow */
-            background: #fff !important; color: #000 !important; /* Flash White/Bright */
+            transform: scale(1.1); 
+            box-shadow: 0 0 30px #d8b4fe, 0 0 10px #8a2be2 inset; 
+            background: #fff !important; color: #000 !important; 
         }
 
         .b-nuke { color: #ff4d88; border: 1px solid #ff0055; background: rgba(255, 0, 85, 0.1); }
@@ -128,7 +142,7 @@
         .invite-btn:active { transform: scale(1.1); box-shadow: 0 0 30px #5865F2; }
 
         .footer-text { margin-top: 80px; color: #666; font-size: 0.8rem; }
-        .warn { font-size: 0.8rem; margin-top: 15px; display: block; font-weight: bold; line-height: 1.6; }
+        .warn { font-size: 0.75rem; margin-top: 15px; display: block; font-weight: bold; line-height: 1.6; }
         .w-p { color: #d8b4fe; text-shadow: 0 0 5px rgba(216, 180, 254, 0.3); } 
         .w-r { color: #ff4d88; }
     </style>
@@ -142,17 +156,24 @@
 
     <div class="main">
         <header>
-            <h1>Aizen.Bots</h1>
+            <h1>Aizen.Botss</h1>
             <span class="sub">"I will stand at the top."</span>
         </header>
         
-        <h2 class="title-line">Moderation</h2>
+        <h2 class="title-line">Bots</h2>
         <div class="grid-layout">
             <div class="item-box">
                 <h3>Moderation Bot</h3>
                 <p>Our Most Powerful Moderation Bot.</p>
                 <a href="https://discord.com/oauth2/authorize?client_id=1469597916438990848&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn w-p">PREFIX: .<br>HELP COMMAND: .help</span>
+            </div>
+
+            <div class="item-box">
+                <h3>OSINT TOOLS BOT</h3>
+                <br>
+                <a href="https://discord.gg/CGtfPWAFET" class="btn b-mod">Discord Server</a>
+                <span class="warn w-p">NOTE: THIS BOT CAN ONLY BE USED IN OUR DISCORD SERVER.<br>CLICK THE JOIN DISCORD BUTTON TO USE THE BOT.</span>
             </div>
         </div>
 
@@ -176,7 +197,7 @@
             <p style="margin-top: 20px; font-size: 0.9rem;">Owner: <strong style="color: #d8b4fe;">@gooutbuddy</strong></p>
         </div>
 
-        <p class="footer-text">&copy; 2026 Aizen.Bots | Shatter the illusion.</p>
+        <p class="footer-text">&copy; 2026 Aizen.Botss | Shatter the illusion.</p>
     </div>
 </body>
 </html>
