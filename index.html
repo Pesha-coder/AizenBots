@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aizen.Botss</title>
+    <title>Aizen.Bots</title>
     <style>
         /* Aizen Purple Animations */
         @keyframes float {
@@ -66,12 +66,15 @@
             animation: popUp 0.8s ease-out; 
         }
 
-        header { margin: 60px 0; }
+        /* Grouped Header Animation */
+        .header-wrapper { 
+            display: inline-block; 
+            margin: 60px 0; 
+            animation: floatTitle 7s infinite ease-in-out; 
+        }
         
-        /* Floating Title */
         h1 { 
             font-size: 3.2rem; color: #d8b4fe; text-shadow: 0 0 20px #8a2be2; margin: 0; 
-            display: inline-block; animation: floatTitle 7s infinite ease-in-out;
         }
         
         .sub { color: #aaa; font-style: italic; margin-top: 10px; display: block; }
@@ -155,10 +158,10 @@
     </div>
 
     <div class="main">
-        <header>
-            <h1>Aizen.Botss</h1>
+        <div class="header-wrapper">
+            <h1>Aizen.Bots</h1>
             <span class="sub">"I will stand at the top."</span>
-        </header>
+        </div>
         
         <h2 class="title-line">Bots</h2>
         <div class="grid-layout">
@@ -197,7 +200,7 @@
             <p style="margin-top: 20px; font-size: 0.9rem;">Owner: <strong style="color: #d8b4fe;">@gooutbuddy</strong></p>
         </div>
 
-        <p class="footer-text">&copy; 2026 Aizen.Botss | Shatter the illusion.</p>
+        <p class="footer-text">&copy; 2026 Aizen.Bots | Shatter the illusion.</p>
     </div>
 </body>
 </html>
