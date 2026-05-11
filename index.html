@@ -1,24 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- WEBSITE TITLE -->
     <title>Aizen.Bots</title>
-
-    <!-- DISCORD EMBED -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Aizen.Bots">
-    <meta property="og:description" content="Official Website Of Soul Society With Powerful Moderation Bots, Osint Tools, And Server Destroying Bots.">
-    <meta property="og:image" content="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh">
-    <meta property="og:url" content="https://soulsocietyy.netlify.app">
-
-    <!-- TWITTER / DISCORD LARGE IMAGE -->
-    <meta name="twitter:card" content="summary_large_image">
-
     <style>
-
+        /* Aizen Purple Atmosphere */
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(30px, -40px); }
@@ -31,339 +18,151 @@
             100% { transform: translate(0px, 0px) rotate(0deg); }
         }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #eee;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body { 
+            margin: 0; padding: 0; background: #000; color: #eee; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             overflow-x: hidden;
         }
 
-        /* BACKGROUND ORBS */
-
+        /* Floating Background Orbs */
         .orb-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden; pointer-events: none;
         }
-
+        
         .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.3;
+            position: absolute; border-radius: 50%;
+            filter: blur(60px); opacity: 0.3;
             animation: float 12s infinite ease-in-out;
         }
 
-        .o1 {
-            top: -5%;
-            left: -5%;
-            width: 450px;
-            height: 450px;
-            background: #4b0082;
+        .o1 { top: -5%; left: -5%; width: 450px; height: 450px; background: #4b0082; }
+        .o2 { bottom: 5%; right: -5%; width: 400px; height: 400px; background: #8a2be2; animation-delay: 2s; }
+
+        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
+
+        /* Title section */
+        .header-wrapper { 
+            display: inline-block; 
+            margin: 60px 0; 
+            animation: floatTitle 6s infinite ease-in-out; 
+        }
+        
+        h1 { font-size: 3.5rem; color: #d8b4fe; text-shadow: 0 0 25px #8a2be2; margin: 0; }
+        .sub { color: #aaa; font-style: italic; margin-top: 10px; display: block; font-size: 1.2rem; }
+
+        .section-title { 
+            font-size: 1.8rem; margin: 50px 0 25px; color: #fff;
+            border-bottom: 2px solid #333; padding-bottom: 10px;
         }
 
-        .o2 {
-            bottom: 5%;
-            right: -5%;
-            width: 400px;
-            height: 400px;
-            background: #8a2be2;
-            animation-delay: 2s;
-        }
+        .grid-layout { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
 
-        /* MAIN */
-
-        .main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* TOP IMAGE */
-
-        .top-banner {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 24px;
-            margin-top: 25px;
-            border: 1px solid rgba(138,43,226,0.5);
-            box-shadow:
-                0 0 40px rgba(138,43,226,0.4),
-                0 0 80px rgba(75,0,130,0.3);
-        }
-
-        /* HEADER */
-
-        .header-wrapper {
-            display: inline-block;
-            margin: 50px 0;
-            animation: floatTitle 6s infinite ease-in-out;
-        }
-
-        h1 {
-            font-size: 4rem;
-            color: #d8b4fe;
-            text-shadow: 0 0 25px #8a2be2;
-            margin: 0;
-        }
-
-        .sub {
-            color: #aaa;
-            font-style: italic;
-            margin-top: 10px;
-            display: block;
-            font-size: 1.2rem;
-        }
-
-        /* SECTIONS */
-
-        .section-title {
-            font-size: 1.8rem;
-            margin: 50px 0 25px;
-            color: #fff;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .grid-layout {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        /* CARDS */
-
+        /* Glass Cards */
         .item-box {
-            background: rgba(25,25,25,0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(138,43,226,0.4);
-            padding: 30px;
-            border-radius: 18px;
-            width: 100%;
-            max-width: 380px;
-            transition: 0.3s ease;
+            background: rgba(25, 25, 25, 0.8); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(138, 43, 226, 0.4); 
+            padding: 30px; border-radius: 15px; width: 100%; max-width: 380px;
+            transition: all 0.3s ease;
         }
 
-        .item-box:hover {
-            transform: translateY(-8px);
-            border-color: #d8b4fe;
-            box-shadow: 0 12px 40px rgba(138,43,226,0.35);
+        .item-box:hover { 
+            border-color: #d8b4fe; 
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 40px rgba(138,43,226,0.3); 
         }
 
-        /* BUTTONS */
-
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            margin-top: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: 0.2s;
-            cursor: pointer;
+            display: inline-block; padding: 14px 35px; margin-top: 20px;
+            text-decoration: none; font-weight: bold; border-radius: 8px;
+            transition: 0.2s; cursor: pointer;
         }
 
-        .b-mod {
-            color: #d8b4fe;
-            border: 1px solid #8a2be2;
-            background: rgba(138,43,226,0.15);
-        }
+        .b-mod { color: #d8b4fe; border: 1px solid #8a2be2; background: rgba(138, 43, 226, 0.15); }
+        .b-mod:hover { background: #8a2be2; color: #000; box-shadow: 0 0 20px #8a2be2; }
 
-        .b-mod:hover {
-            background: #8a2be2;
-            color: #000;
-            box-shadow: 0 0 20px #8a2be2;
-        }
-
-        .b-nuke {
-            color: #ff4d88;
-            border: 1px solid #ff0055;
-            background: rgba(255,0,85,0.15);
-        }
-
-        .b-nuke:hover {
-            background: #ff0055;
-            color: #000;
-            box-shadow: 0 0 20px #ff0055;
-        }
-
-        .warn {
-            font-size: 0.8rem;
-            margin-top: 15px;
-            display: block;
-            font-weight: bold;
-            color: #d8b4fe;
-        }
-
-        .warn-red {
-            color: #ff4d88;
-        }
-
-        /* DISCORD AREA */
+        .b-nuke { color: #ff4d88; border: 1px solid #ff0055; background: rgba(255, 0, 85, 0.15); }
+        .b-nuke:hover { background: #ff0055; color: #000; box-shadow: 0 0 20px #ff0055; }
+        
+        /* Active Animation for mobile feel */
+        .btn:active { transform: scale(1.1); background: #fff !important; color: #000 !important; }
 
         .discord-area {
-            margin-top: 80px;
-            padding: 40px;
-            border: 1px dashed #5865F2;
-            border-radius: 16px;
+            margin-top: 80px; padding: 40px; 
+            border: 1px dashed #5865F2; border-radius: 12px; 
             background: rgba(88,101,242,0.15);
         }
 
-        .owner {
-            color: #d8b4fe;
-            font-weight: bold;
-        }
-
-        .footer {
-            margin-top: 100px;
-            color: #555;
-            font-size: 0.9rem;
-            padding-bottom: 40px;
-        }
-
+        .footer { margin-top: 100px; color: #555; font-size: 0.9rem; padding-bottom: 40px; }
+        .owner { color: #d8b4fe; font-weight: bold; }
+        .warn { font-size: 0.8rem; margin-top: 15px; display: block; font-weight: bold; color: #d8b4fe; }
+        .warn-red { color: #ff4d88; }
     </style>
 </head>
-
 <body>
-
-    <!-- BACKGROUND -->
     <div class="orb-container">
         <div class="orb o1"></div>
         <div class="orb o2"></div>
     </div>
 
-    <!-- MAIN -->
     <div class="main">
-
-        <!-- TOP IMAGE -->
-        <img
-            src="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh"
-            class="top-banner"
-            alt="Aizen Banner"
-        >
-
-        <!-- TITLE -->
         <div class="header-wrapper">
             <h1>Aizen.Bots</h1>
             <span class="sub">"I will stand at the top."</span>
         </div>
-
-        <!-- MODERATION -->
+        
         <h2 class="section-title">Moderation</h2>
-
         <div class="grid-layout">
-
             <div class="item-box">
                 <h3>Moderation Bot</h3>
                 <p>Our Most Powerful Moderation Bot.</p>
-
-                <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&integration_type=0&scope=bot"
-                   class="btn b-mod">
-                    Add Bot
-                </a>
-
+                <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn">PREFIX: . | HELP: .help</span>
             </div>
 
             <div class="item-box">
                 <h3>Moderation Bot 2</h3>
                 <p>Add this if the first bot didn't join due to verification problems.</p>
-
-                <a href="https://discord.com/oauth2/authorize?client_id=1502284069885575168&permissions=8&integration_type=0&scope=bot"
-                   class="btn b-mod">
-                    Add Bot
-                </a>
-
+                <a href="https://discord.com/oauth2/authorize?client_id=1502284069885575168&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn">PREFIX: . | HELP: .help</span>
             </div>
-
         </div>
 
-        <!-- SECURITY -->
         <h2 class="section-title">Security & Tools</h2>
-
         <div class="grid-layout">
-
             <div class="item-box">
                 <h3>OSINT TOOLS BOT</h3>
-
                 <p>Exclusive OSINT and tracking tools.</p>
-
-                <a href="https://discord.gg/CGtfPWAFET"
-                   class="btn b-mod">
-                    Discord Server
-                </a>
-
+                <a href="https://discord.gg/CGtfPWAFET" class="btn b-mod">Discord Server</a>
                 <span class="warn">USEABLE ONLY IN OUR SERVER</span>
             </div>
-
         </div>
 
-        <!-- DESTROYERS -->
         <h2 class="section-title">Destroyers</h2>
-
         <div class="grid-layout">
-
-            <div class="item-box" style="border-color:#500;">
+            <div class="item-box" style="border-color: #500;">
                 <h3>N̸4K̸E̸ B̸O̸T̸</h3>
-
-                <a href="https://discord.com/oauth2/authorize?client_id=1496968232643596358&permissions=8&integration_type=0&scope=bot"
-                   class="btn b-nuke">
-                    Add Bot
-                </a>
-
-                <span class="warn warn-red">
-                    CMDS: !check !nuke !banall !stop
-                </span>
+                <a href="https://discord.com/oauth2/authorize?client_id=1496968232643596358&permissions=8&integration_type=0&scope=bot" class="btn b-nuke">Add Bot</a>
+                <span class="warn warn-red">CMDS: !check !nuke !banall !stop</span>
             </div>
-
-            <div class="item-box" style="border-color:#500;">
+            <div class="item-box" style="border-color: #500;">
                 <h3>R̸4I̸D̸ A̸P̸P̸</h3>
-
-                <a href="https://discord.com/oauth2/authorize?client_id=1496967151972519936"
-                   class="btn b-nuke">
-                    Add Bot
-                </a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1496967151972519936" class="btn b-nuke">Add Bot</a>
             </div>
-
         </div>
 
-        <!-- DISCORD -->
         <div class="discord-area">
-
             <h3>Community Support</h3>
-
             <p>Join for updates, scripts, and support.</p>
-
-            <a href="https://discord.gg/RP7R3G6aAy"
-               class="btn b-mod"
-               style="background:#5865F2;border:none;color:white;">
-                Join Discord
-            </a>
-
-            <p style="margin-top:20px;">
-                Owner:
-                <span class="owner">.aiizen</span>
-            </p>
-
+            <a href="https://discord.gg/kKTa5wpbvM" class="btn b-mod" style="background: #5865F2; border: none; color: white;">Join Discord</a>
+            <p style="margin-top: 20px;">Owner: <span class="owner">.aiizen</span></p>
         </div>
 
-        <!-- FOOTER -->
         <div class="footer">
-            © 2026 Aizen.Bots | Shatter the illusion.
+            &copy; 2026 Aizen.Bots | Shatter the illusion.
         </div>
-
     </div>
-
 </body>
 </html>
