@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Aizen.Bots</title>
+    <meta property="og:title" content="Aizen.Bots" />
+    <meta property="og:description" content="I will stand at the top. The official home of Aizen moderation and security tools." />
+    <meta property="og:image" content="https://soulsocietyy.netlify.app/aizen-banner.png" />
+    <meta property="og:url" content="https://soulsocietyy.netlify.app" />
+    <meta name="theme-color" content="#8a2be2">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         /* Aizen Purple Atmosphere */
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(30px, -40px); }
             100% { transform: translate(0, 0); }
-        }
-
-        @keyframes floatTitle {
-            0% { transform: translate(0px, 0px) rotate(0deg); }
-            50% { transform: translate(5px, -10px) rotate(1deg); }
-            100% { transform: translate(0px, 0px) rotate(0deg); }
         }
 
         body { 
@@ -32,28 +34,36 @@
         
         .orb {
             position: absolute; border-radius: 50%;
-            filter: blur(60px); opacity: 0.3;
+            filter: blur(60px); opacity: 0.2;
             animation: float 12s infinite ease-in-out;
         }
 
         .o1 { top: -5%; left: -5%; width: 450px; height: 450px; background: #4b0082; }
         .o2 { bottom: 5%; right: -5%; width: 400px; height: 400px; background: #8a2be2; animation-delay: 2s; }
 
-        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
+        .main { max-width: 1000px; margin: auto; padding: 20px; text-align: center; }
 
-        /* Title section */
-        .header-wrapper { 
-            display: inline-block; 
-            margin: 60px 0; 
-            animation: floatTitle 6s infinite ease-in-out; 
+        /* Large Banner Styling */
+        .banner-container {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+            border: 1px solid rgba(138, 43, 226, 0.3);
         }
-        
-        h1 { font-size: 3.5rem; color: #d8b4fe; text-shadow: 0 0 25px #8a2be2; margin: 0; }
-        .sub { color: #aaa; font-style: italic; margin-top: 10px; display: block; font-size: 1.2rem; }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .section-title { 
             font-size: 1.8rem; margin: 50px 0 25px; color: #fff;
             border-bottom: 2px solid #333; padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .grid-layout { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
@@ -86,8 +96,8 @@
         .b-nuke { color: #ff4d88; border: 1px solid #ff0055; background: rgba(255, 0, 85, 0.15); }
         .b-nuke:hover { background: #ff0055; color: #000; box-shadow: 0 0 20px #ff0055; }
         
-        /* Active Animation for mobile feel */
-        .btn:active { transform: scale(1.1); background: #fff !important; color: #000 !important; }
+        .warn { font-size: 0.8rem; margin-top: 15px; display: block; font-weight: bold; color: #d8b4fe; }
+        .warn-red { color: #ff4d88; }
 
         .discord-area {
             margin-top: 80px; padding: 40px; 
@@ -96,9 +106,6 @@
         }
 
         .footer { margin-top: 100px; color: #555; font-size: 0.9rem; padding-bottom: 40px; }
-        .owner { color: #d8b4fe; font-weight: bold; }
-        .warn { font-size: 0.8rem; margin-top: 15px; display: block; font-weight: bold; color: #d8b4fe; }
-        .warn-red { color: #ff4d88; }
     </style>
 </head>
 <body>
@@ -108,35 +115,24 @@
     </div>
 
     <div class="main">
-        <div class="header-wrapper">
-            <h1>Aizen.Bots</h1>
-            <span class="sub">"I will stand at the top."</span>
+        <div class="banner-container">
+            <img src="aizen-banner.png" alt="Aizen.Bots Banner" class="banner-img">
         </div>
         
         <h2 class="section-title">Moderation</h2>
         <div class="grid-layout">
             <div class="item-box">
                 <h3>Moderation Bot</h3>
-                <p>Our Most Powerful Moderation Bot.</p>
-                <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
+                <p>Advanced server protection.</p>
+                <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn">PREFIX: . | HELP: .help</span>
             </div>
 
             <div class="item-box">
                 <h3>Moderation Bot 2</h3>
-                <p>Add this if the first bot didn't join due to verification problems.</p>
-                <a href="https://discord.com/oauth2/authorize?client_id=1502284069885575168&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
+                <p>Backup moderation services.</p>
+                <a href="https://discord.com/oauth2/authorize?client_id=1502284069885575168&permissions=8&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn">PREFIX: . | HELP: .help</span>
-            </div>
-        </div>
-
-        <h2 class="section-title">Security & Tools</h2>
-        <div class="grid-layout">
-            <div class="item-box">
-                <h3>OSINT TOOLS BOT</h3>
-                <p>Exclusive OSINT and tracking tools.</p>
-                <a href="https://discord.gg/CGtfPWAFET" class="btn b-mod">Discord Server</a>
-                <span class="warn">USEABLE ONLY IN OUR SERVER</span>
             </div>
         </div>
 
@@ -144,24 +140,19 @@
         <div class="grid-layout">
             <div class="item-box" style="border-color: #500;">
                 <h3>N̸4K̸E̸ B̸O̸T̸</h3>
-                <a href="https://discord.com/oauth2/authorize?client_id=1496968232643596358&permissions=8&integration_type=0&scope=bot" class="btn b-nuke">Add Bot</a>
-                <span class="warn warn-red">CMDS: !check !nuke !banall !stop</span>
-            </div>
-            <div class="item-box" style="border-color: #500;">
-                <h3>R̸4I̸D̸ A̸P̸P̸</h3>
-                <a href="https://discord.com/oauth2/authorize?client_id=1496967151972519936" class="btn b-nuke">Add Bot</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1496968232643596358&permissions=8&scope=bot" class="btn b-nuke">Add Bot</a>
+                <span class="warn warn-red">CMDS: !check !nuke !banall</span>
             </div>
         </div>
 
         <div class="discord-area">
-            <h3>Community Support</h3>
-            <p>Join for updates, scripts, and support.</p>
-            <a href="https://discord.gg/kKTa5wpbvM" class="btn b-mod" style="background: #5865F2; border: none; color: white;">Join Discord</a>
-            <p style="margin-top: 20px;">Owner: <span class="owner">.aiizen</span></p>
+            <h3>Join the Soul Society</h3>
+            <p>Get updates and support for all Aizen tools.</p>
+            <a href="https://discord.gg/RP7R3G6aAy" class="btn b-mod" style="background: #5865F2; border: none; color: white;">Join Discord</a>
         </div>
 
         <div class="footer">
-            &copy; 2026 Aizen.Bots | Shatter the illusion.
+            &copy; 2026 Aizen.Bots | Welcome to my world.
         </div>
     </div>
 </body>
