@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aizen.Bots</title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Aizen.Bots">
-    <meta property="og:description" content="Official Website Of Soul Society With Powerful Moderation Bots, Osint Tools, And Server destroying Bots.">
-    <meta property="og:image" content="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh">
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- Discord / Open Graph Embed Tags -->
+    <meta property="og:title" content="Aizen.Bots" />
+    <meta property="og:description" content="Official Website Of Soul Society With Powerful Moderation Bots, Osint Tools, And Server Destroying Bots." />
+    <meta property="og:image" content="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#8a2be2" />
 
     <style>
-        /* Aizen Purple Atmosphere */
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(30px, -40px); }
@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* Floating Background Orbs */
         .orb-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; overflow: hidden; pointer-events: none;
@@ -46,23 +45,22 @@
         .o1 { top: -5%; left: -5%; width: 450px; height: 450px; background: #4b0082; }
         .o2 { bottom: 5%; right: -5%; width: 400px; height: 400px; background: #8a2be2; animation-delay: 2s; }
 
-        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
-
-        /* The Banner Image */
-        .header-banner {
+        /* Hero Image */
+        .hero-banner {
             width: 100%;
-            max-width: 850px;
-            margin: 20px auto;
-            border-radius: 15px;
-            display: block; /* Ensures the image behaves like a block element */
-            border: 1px solid rgba(138, 43, 226, 0.5);
-            box-shadow: 0 0 35px rgba(138, 43, 226, 0.2);
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
         }
 
-        /* Title section */
+        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
+
         .header-wrapper { 
             display: inline-block; 
-            margin: 40px 0; 
+            margin: 30px 0 60px; 
             animation: floatTitle 6s infinite ease-in-out; 
         }
         
@@ -76,7 +74,6 @@
 
         .grid-layout { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
 
-        /* Glass Cards */
         .item-box {
             background: rgba(25, 25, 25, 0.8); 
             backdrop-filter: blur(12px); 
@@ -91,7 +88,6 @@
             box-shadow: 0 12px 40px rgba(138,43,226,0.3); 
         }
 
-        /* Buttons */
         .btn {
             display: inline-block; padding: 14px 35px; margin-top: 20px;
             text-decoration: none; font-weight: bold; border-radius: 8px;
@@ -104,6 +100,8 @@
         .b-nuke { color: #ff4d88; border: 1px solid #ff0055; background: rgba(255, 0, 85, 0.15); }
         .b-nuke:hover { background: #ff0055; color: #000; box-shadow: 0 0 20px #ff0055; }
         
+        .btn:active { transform: scale(1.1); background: #fff !important; color: #000 !important; }
+
         .discord-area {
             margin-top: 80px; padding: 40px; 
             border: 1px dashed #5865F2; border-radius: 12px; 
@@ -122,10 +120,14 @@
         <div class="orb o2"></div>
     </div>
 
-    <div class="main">
-        
-        <img src="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" alt="Soul Society Banner" class="header-banner">
+    <!-- Hero Image -->
+    <img 
+        src="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" 
+        alt="Aizen.Bots Banner"
+        class="hero-banner"
+    />
 
+    <div class="main">
         <div class="header-wrapper">
             <h1>Aizen.Bots</h1>
             <span class="sub">"I will stand at the top."</span>
@@ -139,7 +141,6 @@
                 <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn">PREFIX: . | HELP: .help</span>
             </div>
-
             <div class="item-box">
                 <h3>Moderation Bot 2</h3>
                 <p>Add this if the first bot didn't join due to verification problems.</p>
@@ -175,7 +176,7 @@
             <h3>Community Support</h3>
             <p>Join for updates, scripts, and support.</p>
             <a href="https://discord.gg/RP7R3G6aAy" class="btn b-mod" style="background: #5865F2; border: none; color: white;">Join Discord</a>
-            <p style="margin-top: 20px;">Owner: <span class="owner">.aiizen</span></p>
+            <p style="margin-top: 20px;">Owner: <span class="owner">.aizen</span></p>
         </div>
 
         <div class="footer">
