@@ -25,18 +25,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes clickPulse {
-            0% { box-shadow: 0 0 5px #8a2be2; transform: scale(1); }
-            50% { box-shadow: 0 0 25px #8a2be2, 0 0 50px #d8b4fe; transform: scale(1.05); }
-            100% { box-shadow: 0 0 5px #8a2be2; transform: scale(1); }
-        }
-
         body { 
             margin: 0; padding: 0; background: #000; color: #eee; 
             font-family: 'Inter', 'Segoe UI', sans-serif; overflow-x: hidden;
         }
 
-        /* Stronger Background Orbs */
+        /* Background Orbs */
         .orb-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; overflow: hidden; pointer-events: none;
@@ -48,35 +42,14 @@
             animation: float 10s infinite ease-in-out;
         }
 
-        .o1 { 
-            top: -10%; left: -10%; width: 400px; height: 400px; 
-            background: #4b0082; animation-duration: 12s; 
-        }
-        .o2 { 
-            bottom: 10%; right: -10%; width: 350px; height: 350px; 
-            background: #8a2be2; animation-duration: 15s; animation-delay: 2s;
-        }
-        .o3 { 
-            top: 40%; left: 40%; width: 200px; height: 200px; 
-            background: #d8b4fe; opacity: 0.2; animation-duration: 20s; 
-        }
+        .o1 { top: -10%; left: -10%; width: 400px; height: 400px; background: #4b0082; animation-duration: 12s; }
+        .o2 { bottom: 10%; right: -10%; width: 350px; height: 350px; background: #8a2be2; animation-duration: 15s; animation-delay: 2s; }
+        .o3 { top: 40%; left: 40%; width: 200px; height: 200px; background: #d8b4fe; opacity: 0.2; animation-duration: 20s; }
 
-        .main { 
-            max-width: 900px; margin: auto; padding: 20px; text-align: center; 
-            animation: popUp 0.8s ease-out; 
-        }
+        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; animation: popUp 0.8s ease-out; }
 
-        /* Grouped Header Animation */
-        .header-wrapper { 
-            display: inline-block; 
-            margin: 60px 0; 
-            animation: floatTitle 7s infinite ease-in-out; 
-        }
-        
-        h1 { 
-            font-size: 3.2rem; color: #d8b4fe; text-shadow: 0 0 20px #8a2be2; margin: 0; 
-        }
-        
+        .header-wrapper { display: inline-block; margin: 60px 0; animation: floatTitle 7s infinite ease-in-out; }
+        h1 { font-size: 3.2rem; color: #d8b4fe; text-shadow: 0 0 20px #8a2be2; margin: 0; }
         .sub { color: #aaa; font-style: italic; margin-top: 10px; display: block; }
 
         .title-line { 
@@ -85,27 +58,18 @@
             opacity: 0; animation: popUp 0.8s ease-out forwards; animation-delay: 0.2s;
         }
 
-        .grid-layout { 
-            display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; 
-        }
+        .grid-layout { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
 
-        /* Glassmorphism Boxes (Transparent) */
         .item-box {
-            background: rgba(20, 20, 20, 0.6); 
-            backdrop-filter: blur(10px); 
+            background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px); 
             border: 1px solid rgba(138, 43, 226, 0.2); 
             padding: 25px; border-radius: 12px; width: 100%; max-width: 400px;
             opacity: 0; animation: popUp 0.8s ease-out forwards; animation-delay: 0.4s;
             transition: transform 0.3s;
         }
 
-        .item-box:hover { 
-            border-color: #8a2be2; 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 30px rgba(138,43,226,0.15); 
-        }
+        .item-box:hover { border-color: #8a2be2; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(138,43,226,0.15); }
 
-        /* Button Styles */
         .btn {
             display: inline-block; padding: 12px 30px; margin-top: 15px;
             text-decoration: none; font-weight: 700; border-radius: 6px;
@@ -114,25 +78,14 @@
 
         .b-mod { color: #d8b4fe; border: 1px solid #8a2be2; background: rgba(138, 43, 226, 0.1); }
         .b-mod:hover { background: #8a2be2; color: #000; box-shadow: 0 0 15px #8a2be2; }
-        
-        /* THE CLICK ANIMATION */
-        .btn:active {
-            transform: scale(1.1); 
-            box-shadow: 0 0 30px #d8b4fe, 0 0 10px #8a2be2 inset; 
-            background: #fff !important; color: #000 !important; 
-        }
+        .btn:active { transform: scale(1.1); box-shadow: 0 0 30px #d8b4fe, 0 0 10px #8a2be2 inset; background: #fff !important; color: #000 !important; }
 
         .b-nuke { color: #ff4d88; border: 1px solid #ff0055; background: rgba(255, 0, 85, 0.1); }
         .b-nuke:hover { background: #ff0055; color: #000; box-shadow: 0 0 15px #ff0055; }
-        .b-nuke:active {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px #ff4d88;
-            background: #fff !important; color: #000 !important;
-        }
+        .b-nuke:active { transform: scale(1.1); box-shadow: 0 0 30px #ff4d88; background: #fff !important; color: #000 !important; }
 
         .discord-area {
-            margin-top: 60px; padding: 40px; 
-            border: 1px dashed #5865F2; border-radius: 10px; 
+            margin-top: 60px; padding: 40px; border: 1px dashed #5865F2; border-radius: 10px; 
             background: rgba(88,101,242,0.1); backdrop-filter: blur(5px);
             opacity: 0; animation: popUp 0.8s ease-out forwards; animation-delay: 0.6s;
         }
@@ -168,7 +121,14 @@
             <div class="item-box">
                 <h3>Moderation Bot</h3>
                 <p>Our Most Powerful Moderation Bot.</p>
-                <a href="https://discord.com/oauth2/authorize?client_id=1469597916438990848&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1481244563870847036&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
+                <span class="warn w-p">PREFIX: .<br>HELP COMMAND: .help</span>
+            </div>
+
+            <div class="item-box">
+                <h3>Moderation Bot 2</h3>
+                <p>Our Most Powerful Moderation Bot. add this one if the first bot didn't join cuz of verification problems.</p>
+                <a href="https://discord.com/oauth2/authorize?client_id=1502284069885575168&permissions=8&integration_type=0&scope=bot" class="btn b-mod">Add Bot</a>
                 <span class="warn w-p">PREFIX: .<br>HELP COMMAND: .help</span>
             </div>
 
@@ -184,12 +144,12 @@
         <div class="grid-layout">
             <div class="item-box" style="border-color: #310000; background: rgba(40, 0, 0, 0.4);">
                 <h3>N̸4K̸E̸ B̸O̸T̸</h3>
-                <a href="https://discord.com/oauth2/authorize?client_id=1469604736079499394&permissions=8&integration_type=0&scope=bot" class="btn b-nuke">Add Bot</a>
-                <span class="warn w-r">COMMANDS: !check !nuke</span>
+                <a href="https://discord.com/oauth2/authorize?client_id=1496968232643596358&permissions=8&integration_type=0&scope=bot" class="btn b-nuke">Add Bot</a>
+                <span class="warn w-r">COMMANDS: !check !nuke !banall !stop</span>
             </div>
             <div class="item-box" style="border-color: #310000; background: rgba(40, 0, 0, 0.4);">
                 <h3>R̸4I̸D̸ A̸P̸P̸</h3>
-                <a href="https://discord.com/oauth2/authorize?client_id=1475794806872739944" class="btn b-nuke">Add Bot</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1496967151972519936" class="btn b-nuke">Add Bot</a>
             </div>
         </div>
 
@@ -197,7 +157,7 @@
             <h3>Community Support</h3>
             <p>Join the server for updates and bot support.</p>
             <a href="https://discord.gg/RP7R3G6aAy" class="invite-btn">Join Discord</a>
-            <p style="margin-top: 20px; font-size: 0.9rem;">Owner: <strong style="color: #d8b4fe;">@gooutbuddy</strong></p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">Owner: <strong style="color: #d8b4fe;">.aiizen</strong></p>
         </div>
 
         <p class="footer-text">&copy; 2026 Aizen.Bots | Shatter the illusion.</p>
