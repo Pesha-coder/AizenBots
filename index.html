@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aizen.Bots</title>
 
-    <!-- Discord / Open Graph Embed Tags -->
+    <!-- Discord Embed Tags -->
     <meta property="og:title" content="Aizen.Bots" />
     <meta property="og:description" content="Official Website Of Soul Society With Powerful Moderation Bots, Osint Tools, And Server Destroying Bots." />
-    <meta property="og:image" content="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" />
+    <meta property="og:image" content="https://res.cloudinary.com/dnznzn6rp/image/upload/f_jpg,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh.jpg" />
+    <meta property="og:url" content="https://soulsocietyy.netlify.app/" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#8a2be2" />
 
@@ -23,6 +24,12 @@
             0% { transform: translate(0px, 0px) rotate(0deg); }
             50% { transform: translate(5px, -10px) rotate(1deg); }
             100% { transform: translate(0px, 0px) rotate(0deg); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px #8a2be2, 0 0 30px #4b0082; }
+            50% { box-shadow: 0 0 30px #d8b4fe, 0 0 60px #8a2be2; }
+            100% { box-shadow: 0 0 15px #8a2be2, 0 0 30px #4b0082; }
         }
 
         body { 
@@ -45,18 +52,21 @@
         .o1 { top: -5%; left: -5%; width: 450px; height: 450px; background: #4b0082; }
         .o2 { bottom: 5%; right: -5%; width: 400px; height: 400px; background: #8a2be2; animation-delay: 2s; }
 
-        /* Hero Image */
-        .hero-banner {
-            width: 100%;
-            max-height: 420px;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
+
+        .banner-wrapper {
+            margin: 40px auto 20px;
+            max-width: 700px;
+            border-radius: 18px;
+            border: 2px solid #8a2be2;
+            overflow: hidden;
+            animation: glowPulse 3s infinite ease-in-out;
         }
 
-        .main { max-width: 900px; margin: auto; padding: 20px; text-align: center; }
+        .banner-wrapper img {
+            width: 100%;
+            display: block;
+        }
 
         .header-wrapper { 
             display: inline-block; 
@@ -120,14 +130,16 @@
         <div class="orb o2"></div>
     </div>
 
-    <!-- Hero Image -->
-    <img 
-        src="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" 
-        alt="Aizen.Bots Banner"
-        class="hero-banner"
-    />
-
     <div class="main">
+
+        <!-- Banner Image -->
+        <div class="banner-wrapper">
+            <img 
+                src="https://res.cloudinary.com/dnznzn6rp/image/upload/f_auto,q_auto/file_00000000a17871f49a13f7a241cae580_g3uvhh" 
+                alt="Aizen.Bots Banner"
+            />
+        </div>
+
         <div class="header-wrapper">
             <h1>Aizen.Bots</h1>
             <span class="sub">"I will stand at the top."</span>
